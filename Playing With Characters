@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+Playing With Characters
+
+Task----------------------------------------------------
+
+You have to print the character, , in the first line. Then print  in next line. In the last line print the sentence, .
+
+Input Format----------------------------
+
+First, take a character,  as input.
+Then take the string,  as input.
+Lastly, take the sentence  as input.
+
+Constraints----------------------------------
+
+Strings for  and  will have fewer than 100 characters, including the newline.
+
+Output Format------------------
+
+Print three lines of output. The first line prints the character, .
+The second line prints the string, .
+The third line prints the sentence, .
+--------------------------------------------------------------------------------------------------
+Sample Input 0
+
+C
+Language
+Welcome To C!!
+Sample Output 0
+
+C
+Language
+Welcome To C!!
+
+
+
+CODE------------------------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    char ch;
+    char s[50];
+    char sen[100];
+    
+    scanf("%c\n",&ch);
+    scanf("%s", s);
+    scanf("\n");
+    scanf("%[^\n]%*c",sen);//n order to take a line as input, you can use scanf("%[^\n]%*c", s); where  is defined as char s[MAX_LEN] where  is the maximum size of . Here, [] is the scanset character.                                 ^\n stands for taking input until a newline isn't                                        encountered. Then, with this 
+                              //%*c, it reads the newline character and here, the used * indicates that this newline character is discarded.
+                            //The statement: scanf("%[^\n]%*c", s); will not work because the last statement will read a newline character,\n, from the previous line. 
+                            This can be handled in a variety of ways. One way is to use scanf("\n"); before the last statement.
+                        
+    printf ("%c\n",ch);
+    printf("%s\n", s);
+    printf("%s",sen);
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
